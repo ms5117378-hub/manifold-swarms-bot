@@ -1,0 +1,114 @@
+# Risk Management Rules and Limits
+
+# Portfolio-Level Risk Limits
+portfolio_limits:
+  max_total_exposure: 0.80  # 80% of total balance
+  min_balance_reserve: 0.10  # 10% reserve requirement
+  max_active_positions: 5
+  max_correlation_exposure: 0.30  # 30% in correlated markets
+
+# Position-Level Risk Limits
+position_limits:
+  max_single_position: 0.10  # 10% of balance per position
+  max_daily_loss: 0.05  # 5% daily loss limit
+  max_weekly_loss: 0.15  # 15% weekly loss limit
+  min_liquidity_requirement: 100  # M$100 minimum liquidity
+
+# Stop Loss and Take Profit Rules
+exit_rules:
+  stop_loss_threshold: -0.15  # -15% stop loss
+  take_profit_threshold: 0.25  # +25% take profit
+  partial_profit_levels:
+    - level: 0.15  # 15% profit
+      take_percent: 0.30  # Take 30% of position
+    - level: 0.20  # 20% profit
+      take_percent: 0.50  # Take 50% of position
+  time_based_exits:
+    - days_to_close: 1
+      reduction_percent: 0.25  # Reduce by 25%
+    - days_to_close: 3
+      reduction_percent: 0.50  # Reduce by 50%
+
+# Market-Specific Risk Rules
+market_rules:
+  min_market_hours: 6  # Minimum hours until close
+  max_market_age: 365  # Maximum days since creation
+  min_volume_requirement: 50  # M$50 minimum volume
+  banned_tags:
+    - "highly_speculative"
+    - "extreme_volatility"
+  required_liquidity_tiers:
+    tier_1: 1000  # M$1000+ for full position
+    tier_2: 500   # M$500+ for 75% position
+    tier_3: 100   # M$100+ for 50% position
+
+# Agent Risk Validation
+agent_validation:
+  min_consensus_confidence: 0.65
+  min_agent_agreement: 2  # Minimum 2 agents must agree
+  max_conflicting_signals: 1  # Maximum 1 strong conflict
+  agent_performance_weighting: true
+  historical_accuracy_threshold: 0.55
+
+# Position Sizing Rules
+position_sizing:
+  base_sizing_method: "kelly_criterion"
+  kelly_multiplier: 0.25  # Conservative Kelly
+  max_kelly_position: 0.10  # Cap at 10%
+  confidence_adjustment: true
+  volatility_adjustment: true
+  liquidity_adjustment: true
+
+# Risk Monitoring
+monitoring:
+  real_time_alerts: true
+  portfolio_checks:
+    - frequency: "hourly"
+      checks:
+        - "total_exposure"
+        - "position_concentration"
+        - "correlation_risk"
+    - frequency: "daily"
+      checks:
+        - "performance_metrics"
+        - "agent_contributions"
+        - "risk_adjusted_returns"
+  emergency_stop:
+    trigger_conditions:
+      - "daily_loss_exceeded"
+      - "balance_below_minimum"
+      - "system_errors"
+    action: "close_all_positions"
+
+# Stress Testing Scenarios
+stress_tests:
+  scenarios:
+    - name: "market_crash"
+      description: "30% market drop"
+      position_impact: -0.30
+    - name: "liquidity_crisis"
+      description: "Liquidity dries up"
+      position_impact: -0.20
+    - name: "correlation_breakdown"
+      description: "Hedges fail"
+      position_impact: -0.15
+  max_acceptable_loss: 0.25  # 25% maximum stress test loss
+
+# Risk Reporting
+reporting:
+  daily_metrics:
+    - "total_pnl"
+    - "risk_exposure"
+    - "position_count"
+    - "win_rate"
+    - "sharpe_ratio"
+  weekly_reports:
+    - "agent_performance"
+    - "strategy_effectiveness"
+    - "risk_breach_log"
+    - "recommendations"
+  monthly_analysis:
+    - "risk_adjusted_performance"
+    - "attribution_analysis"
+    - "model_validation"
+    - "parameter_optimization"

@@ -1,0 +1,67 @@
+# Core Swarms Framework
+swarms>=5.0.0
+swarm-models>=0.1.0
+
+# LLM Providers for Swarms Agents
+openai>=1.0.0
+anthropic>=0.5.0
+cohere>=4.0.0
+
+# Manifold Markets Integration
+manifoldbot>=0.1.0
+requests>=2.31.0
+websockets>=12.0
+
+# Data Processing & Analysis
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.11.0
+
+# Machine Learning
+scikit-learn>=1.3.0
+torch>=2.0.0
+transformers>=4.30.0
+
+# Time Series Analysis
+statsmodels>=0.14.0
+pmdarima>=2.0.3
+
+# Agent Communication & Coordination
+redis>=5.0.0
+celery>=5.3.0
+aiohttp>=3.9.0
+
+# Configuration & Logging
+python-dotenv>=1.0.0
+pydantic>=2.0.0
+pydantic-settings>=2.0.0
+loguru>=0.7.0
+
+# Database & Persistence
+sqlalchemy>=2.0.0
+alembic>=1.12.0
+asyncpg>=0.29.0
+
+# API Integrations
+httpx>=0.25.0
+beautifulsoup4>=4.12.0
+newspaper3k>=0.2.8
+
+# Testing & Quality
+pytest>=7.4.0
+pytest-asyncio>=0.21.0
+pytest-cov>=4.1.0
+black>=23.0.0
+ruff>=0.1.0
+mypy>=1.5.0
+
+# Monitoring & Visualization
+plotly>=5.17.0
+streamlit>=1.28.0
+prometheus-client>=0.18.0
+grafana-client>=3.5.0
+
+# Utilities
+tenacity>=8.2.0
+python-json-logger>=2.0.0
+pyyaml>=6.0

@@ -1,0 +1,117 @@
+# Swarms Workflow Configurations
+
+# Sequential Workflow for Main Trading Pipeline
+sequential_workflow:
+  name: "Main Trading Pipeline"
+  description: "Sequential execution through all trading stages"
+  agents:
+    - "market_discovery"
+    - "fundamental_analyst"
+    - "technical_analyst"
+    - "sentiment_analyst"
+    - "strategy_synthesizer"
+    - "risk_manager"
+    - "execution_agent"
+  max_loops: 1
+  timeout: 600
+
+# Agent Rearrange for Parallel Analysis
+parallel_analysis:
+  name: "Parallel Market Analysis"
+  description: "Run multiple analysts in parallel then synthesize"
+  agents:
+    - "fundamental_analyst"
+    - "technical_analyst"
+    - "sentiment_analyst"
+    - "value_investor"
+    - "momentum_trader"
+    - "mean_reversion_trader"
+    - "arbitrage_finder"
+  flow_pattern: |
+    fundamental_analyst -> technical_analyst -> sentiment_analyst
+    fundamental_analyst -> value_investor
+    technical_analyst -> momentum_trader, mean_reversion_trader
+    sentiment_analyst -> arbitrage_finder
+    value_investor, momentum_trader, mean_reversion_trader, arbitrage_finder -> risk_manager
+    risk_manager -> execution_agent
+  max_loops: 1
+  timeout: 300
+
+# Mixture of Agents for Consensus Building
+consensus_moa:
+  name: "Strategy Consensus Builder"
+  description: "Multiple strategy agents vote on best action"
+  strategy_agents:
+    - "value_investor"
+    - "momentum_trader"
+    - "mean_reversion_trader"
+    - "arbitrage_finder"
+  aggregator_agent: "orchestrator"
+  aggregator_prompt: |
+    Review all strategy recommendations and synthesize into final decision:
+    
+    1. Weight by agent historical performance
+    2. Require minimum consensus confidence of 0.65
+    3. Consider conflicting signals
+    4. Apply risk management constraints
+    
+    Provide:
+    - Final action: BUY, SELL, HOLD
+    - Consensus confidence: 0.0 to 1.0
+    - Position size recommendation
+    - Detailed reasoning
+    - Key contributing factors
+  layers: 2
+  timeout: 180
+
+# Hierarchical Workflow
+hierarchical_workflow:
+  name: "Hierarchical Trading System"
+  description: "Department-based organization with clear reporting lines"
+  structure:
+    orchestrator:
+      - analysis_department:
+          fundamental_analyst: null
+          technical_analyst: null
+          sentiment_analyst: null
+      - strategy_department:
+          value_investor: null
+          momentum_trader: null
+          mean_reversion_trader: null
+          arbitrage_finder: null
+      - operations_department:
+          risk_manager: null
+          execution_agent: null
+          portfolio_manager: null
+  decision_flow: "bottom_up_analysis_top_down_decisions"
+  timeout: 450
+
+# Adaptive Learning Workflow
+adaptive_workflow:
+  name: "Adaptive Learning System"
+  description: "Self-improving system with agent learning"
+  learning_coordinator: "learning_coordinator"
+  feedback_loop: true
+  performance_tracking: true
+  adaptation_frequency: "daily"
+  metrics_tracked:
+    - "agent_accuracy"
+    - "profit_contribution"
+    - "consensus_quality"
+    - "execution_efficiency"
+  timeout: 300
+
+# Research Swarm Workflow
+research_workflow:
+  name: "Research Swarm"
+  description: "Multi-agent research for complex markets"
+  research_coordinator: "research_coordinator"
+  search_agents:
+    - "news_search_agent"
+    - "academic_source_agent"
+    - "social_media_agent"
+    - "expert_opinion_agent"
+  synthesizer_agent: "research_synthesizer"
+  probability_estimator: "probability_estimator"
+  max_search_depth: 3
+  timeout: 240

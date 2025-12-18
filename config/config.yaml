@@ -1,0 +1,51 @@
+# Bot Configuration
+bot:
+  name: "Manifold Swarms Trading Bot"
+  version: "1.0.0"
+  description: "Multi-agent trading system using Swarms.ai framework"
+  
+# Trading Parameters
+trading:
+  target_user: "MikhailTal"
+  check_interval: 300  # 5 minutes in seconds
+  max_position_size: 0.10  # 10% of balance
+  max_active_positions: 5
+  min_consensus_confidence: 0.65
+  
+# Risk Management
+risk:
+  max_total_exposure: 0.80  # 80% of balance
+  min_balance_reserve: 0.10  # 10% reserve
+  stop_loss_threshold: -0.15  # -15%
+  take_profit_threshold: 0.25  # +25%
+  max_single_market_exposure: 0.10  # 10%
+
+# Agent Configuration
+agents:
+  timeout: 300  # 5 minutes
+  max_retries: 3
+  parallel_analysis: true
+  consensus_threshold: 0.65
+  
+# LLM Configuration
+llm:
+  provider: "openai"
+  model: "gpt-4"
+  temperature: 0.1
+  max_tokens: 2000
+  fallback_providers: ["anthropic", "cohere"]
+
+# Workflow Configuration
+workflows:
+  main_workflow: "sequential"
+  analysis_pattern: "agent_rearrange"
+  consensus_pattern: "mixture_of_agents"
+  max_loops: 1
+  
+# Monitoring
+monitoring:
+  log_level: "INFO"
+  enable_dashboard: true
+  dashboard_port: 8501
+  prometheus_port: 8000
+  save_agent_states: true
