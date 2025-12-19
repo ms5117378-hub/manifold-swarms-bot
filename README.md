@@ -415,7 +415,7 @@ We welcome contributions! Key areas:
 
 ```bash
 # Clone development branch
-git clone -b develop <repository-url>
+git clone -b develop https://github.com/ms5117378-hub/manifold-swarms-bot.git
 
 # Install development dependencies
 pip install -r requirements-dev.txt
