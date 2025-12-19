@@ -452,11 +452,11 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues**: [GitHub Issues](https://github.com/ms5117378-hub/manifold-swarms-bot/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/ms5117378-hub/manifold-swarms-bot/discussions)
-- **Email**:
+- **Contacts**:  [Freelancer](https://www.freelancer.com/solutionslanguag)
 
 ## Warning
 
-Currently this project build for [freelacer.com contest ]
+Currently this project build for [Freelancer.com](https://www.freelancer.com/contest/Best-OpenSource-Judgmental-Prediction-Python-Repository-2658923)
 
 ---
 
