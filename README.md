@@ -50,7 +50,7 @@ The system implements multiple Swarms.ai workflow patterns:
 
 ```bash
 # Clone the repository
-git clone <repository-url>
+git clone https://github.com/ms5117378-hub/manifold-swarms-bot.git
 cd manifold-swarms-bot
 
 # Run setup script
